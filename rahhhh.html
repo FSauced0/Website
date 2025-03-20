@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports News</title>
+    <link rel="stylesheet" href="rahhh2.css"> <!-- Updated to match the CSS file name -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Replay</h1>
+        </div>
+        <nav>
+            <ul class="tabs">
+                <li><a href="#football" class="tab-link">Football</a></li>
+                <li><a href="#basketball" class="tab-link">Basketball</a></li>
+                <li><a href="#tennis" class="tab-link">Tennis</a></li>
+                <li><a href="#about" class="tab-link">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="football" class="tab-content">
+            <h2>Football News</h2>
+            <article>
+                <h3>Football: Team A Wins Championship</h3>
+                <p>Breaking news: Team A claimed victory in the championship with a stunning last-minute goal...</p>
+                <a href="#">Read More</a>
+            </article>
+            <article>
+                <h3>Football: Transfer Updates</h3>
+                <p>Top players are making moves this season, with major transfers dominating the headlines...</p>
+                <a href="#">Read More</a>
+            </article>
+        </section>
+
+        <section id="basketball" class="tab-content">
+            <h2>Basketball News</h2>
+            <article>
+                <h3>Basketball: Star Player Injury</h3>
+                <p>The latest updates on the star player's injury and recovery process...</p>
+                <a href="#">Read More</a>
+            </article>
+            <article>
+                <h3>Basketball: Playoff Preview</h3>
+                <p>As the playoffs near, here's a look at the teams to watch this year...</p>
+                <a href="#">Read More</a>
+            </article>
+        </section>
+
+        <section id="tennis" class="tab-content">
+            <h2>Tennis News</h2>
+            <article>
+                <h3>Tennis: Major Tournament Coming Up</h3>
+                <p>The highly anticipated tennis tournament is set to start next month...</p>
+                <a href="#">Read More</a>
+            </article>
+            <article>
+                <h3>Tennis: Player Rankings</h3>
+                <p>The latest ATP and WTA rankings are out, with big surprises...</p>
+                <a href="#">Read More</a>
+            </article>
+        </section>
+
+        <section id="about" class="tab-content">
+            <h2>About Us</h2>
+            <p>Welcome to Replay, your go-to destination for the latest updates in the world of sports. Look up the scores of the games you missed and highlights.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <p>&copy; 2025 Sports News. All Rights Reserved.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                tabLinks.forEach(link => link.classList.remove('active'));
+                link.classList.add('active');
+
+                tabContents.forEach(content => content.style.display = 'none');
+                const activeTab = document.querySelector(link.getAttribute('href'));
+                activeTab.style.display = 'block';
+            });
+        });
+
+        // Set default tab to be visible
+        document.querySelector('.tab-link').click();
+    </script>
+</body>
+</html>
